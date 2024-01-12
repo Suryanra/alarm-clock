@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+            background-color: aqua;
+        }
+input{
+    width:80px;
+    height:20px
+} 
+.container{
+    width:100%;
+    height:100vh;
+    background-color: aqua;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.original{
+    width:200px;
+    height:200px;
+    background-color: yellow;
+    /* padding:10px; */
+    /* margin:10px; */
+    border-radius:20%;
+    border:2px solid black;
+}
+.original div{
+    padding:10px;
+}
+button{
+    margin:3px;
+}
+/* #music{
+display:block;
+    width:202px;
+    height:30px;
+    padding-top:10px;
+    margin-top:20px;
+    border:1px solid red;
+    display:flex;
+    align-items: center;
+position: relative;
+}
+
+#music_box{
+    width:0px;
+    position:absolute;
+    top:30px;
+    left:-15px;
+    margin:20px;
+    border:1px solid black;
+    border-top:0px transparent;
+    border-bottom:0px transparent;
+    background-color:rgba(240, 240, 17, 0.509);
+    visibility:hidden;
+    display:grid;
+    columns: 1;
+    overflow-y: auto;
+    display:grid;
+    grid-row:0px;
+    grid-column: auto;
+    justify-content: top;
+    
+} */
+
+.row1{
+    width:100%;
+    height:30px;
+    background-color: aquamarine;
+    border:1px solid red;
+
+
+}
+.animationclass1{
+    animation-name:animate1;
+    animation-duration:2s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+@keyframes animate1{
+    0%{
+        width:0px;
+    }
+
+    100%{
+        width:300px;
+    }
+}
+    </style>
+    
+</head>
+<body>
+<div class="container">
+    <div class="original">
+        <div> 
+            <p id="demo1" style="text-align: center;">ALARM NOT SET</p>
+            <input type="number" min="0" max="24" id="imph">
+            <input type="number" min="0" max="59" id="impm">
+        </div>
+        <div style="text-align: center;">
+            <button onclick="fun1()">SUBMIT</button>
+            <button type="reset" onclick="window.location.reload()">RESET</button>
+            <button type="button" onclick="pausei()">PAUSE</button>
+        </div>        
+    </div>
+    <!-- <input id="volume" min ="0" max="1" type="range" step="0.1"> -->
+    <audio id="aud">
+        <source src="audio/audiomusic.wav" type="audio/wav" ></source>
+        <source src="audio/audiomusic.ogg" type="audio/ogg" ></source>
+    </audio>
+</div>
+    <script src="alarm.js">
+
+        var hi=document.getElementById("aud")
+        hi.valume=document.getElementById("volume").value
+        console.log(hi.volume)
+
+        
+        
+    </script>
+    
+</body>
+</html>
